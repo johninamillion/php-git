@@ -1,0 +1,8 @@
+includes:
+    - ./vendor/johninamillion/php-code-styles/extension.neon
+
+parameters:
+    level: 10
+    paths:
+        - src
+    tmpDir: tmp/phpstan

@@ -1,10 +1,13 @@
 {
     "name": "johninamillion/php-git",
     "description": "A lightweight PHP wrapper for common Git CLI commands.",
+    "keywords": ["php", "git", "wrapper"],
+    "license": "MIT",
+    "version": "0.1.0",
     "authors": [
         {
             "name": "johninamillion",
-            "email": "john@millionvisions.de"
+            "email": "git@millionvisions.de"
         }
     ],
     "autoload": {
@@ -26,7 +29,8 @@
     "require-dev": {
         "roave/security-advisories": "dev-latest",
         "johninamillion/php-code-styles": "^0.2.0",
-        "phpunit/phpunit": "^12.0"
+        "phpunit/phpunit": "^12.0",
+        "johninamillion/todo": "^0.1.0"
     },
     "scripts": {
         "post-install-cmd": [
@@ -38,6 +42,8 @@
         "code:analyse": "./vendor/bin/phpstan analyse",
         "code:format": "./vendor/bin/php-cs-fixer fix",
         "test": "./vendor/bin/phpunit --testdox",
-        "test:coverage": "./vendor/bin/phpunit --coverage-php src/"
+        "test:coverage": "./vendor/bin/phpunit --coverage-php src/",
+        "todo": "./vendor/bin/todo --display-time",
+        "todo:me": "./vendor/bin/todo --me --display-time"
     }
 }

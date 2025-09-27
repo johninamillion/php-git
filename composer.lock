@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2edf6b6c1ae36c44b9aabd994a9d200a",
+    "content-hash": "ed21da6db9cc114bfa1d3cd6f4f2bfda",
     "packages": [
         {
             "name": "psr/container",
@@ -1407,6 +1407,57 @@
                 "source": "https://github.com/johninamillion/scripture-header/tree/0.2.0"
             },
             "time": "2025-09-25T20:21:39+00:00"
+        },
+        {
+            "name": "johninamillion/todo",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johninamillion/todo.git",
+                "reference": "75eb0ebf6d097fa8b01a577c727bced8b088421b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johninamillion/todo/zipball/75eb0ebf6d097fa8b01a577c727bced8b088421b",
+                "reference": "75eb0ebf6d097fa8b01a577c727bced8b088421b",
+                "shasum": ""
+            },
+            "require": {
+                "johninamillion/php-git": "^0.1.0",
+                "php": "^8.3",
+                "symfony/console": "^6.2|^7.0",
+                "symfony/process": "^6.2|^7.0"
+            },
+            "require-dev": {
+                "johninamillion/php-code-styles": "^0.2.0",
+                "phpunit/phpunit": "^12.0",
+                "roave/security-advisories": "dev-latest"
+            },
+            "bin": [
+                "bin/todo"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "johninamillion\\ToDo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "johninamillion",
+                    "email": "git@millionvisions.de"
+                }
+            ],
+            "description": "A powerful CLI tool to scan your source code for open tasks — with user filtering, Git integration, and customizable reporting.",
+            "support": {
+                "issues": "https://github.com/johninamillion/todo/issues",
+                "source": "https://github.com/johninamillion/todo/tree/0.1.0"
+            },
+            "time": "2025-09-27T20:28:03+00:00"
         },
         {
             "name": "myclabs/deep-copy",

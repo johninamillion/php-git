@@ -1,14 +1,14 @@
-# PHP Git
+# PHP-Git
 
-[![PHPUnit](https://github.com/johninamillion/php-git/actions/workflows/phpunit.yml/badge.svg)](https://github.com/johninamillion/php-git/actions/workflows/phpunit.yml)
-[![PHPStan](https://github.com/johninamillion/php-git/actions/workflows/phpstan.yml/badge.svg)](https://github.com/johninamillion/php-git/actions/workflows/phpstan.yml)
+[![Tests](https://github.com/johninamillion/php-git/actions/workflows/tests.yml/badge.svg)](https://github.com/johninamillion/php-git/actions/workflows/tests.yml)
+[![ToDos](https://github.com/johninamillion/php-git/actions/workflows/todos.yml/badge.svg)](https://github.com/johninamillion/php-git/actions/workflows/todos.yml)
+[![Version](https://img.shields.io/packagist/v/johninamillion/php-git)](https://packagist.org/packages/johninamillion/php-git)
 
 ---
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Customization](#customization)
 - [Development](#development)
 - [License](#license)
 
@@ -17,39 +17,41 @@
 ## Installation
 
 You can install the package via Composer:
-
 ```bash
 composer require --dev johninamillion/php-git
 ```
 
 ## Development
 
-### Analyze
+### Analyze Code
 
 To analyze your code for potential issues, you can run [phpstan](https://github.com/phpstan/phpstan):
-
 ```bash
 composer code:analyse
 ```
 
-### CS-Fixer
+### Apply Code-Styles
 
 To ensure your code adheres to the coding standards, you can run the [php-cs-fixer](https://github.com/php-cs-fixer/php-cs-fixer).
-
 ```bash
 composer code:format
 ```
 
-### Testing
+### Get open tasks
+
+To get a list of open tasks noticed in comments, run:
+```bash
+composer todo
+```
+
+### Run Tests
 
 To run the tests, make sure you have installed [phpunit](https://github.com/sebastianbergmann/phpunit) within the dev dependencies and then run:
-
 ```bash
 composer test
 ```
 
 Check the Test Coverage:
-
 ```bash
 composer test:coverage
 ```

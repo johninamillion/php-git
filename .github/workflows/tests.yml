@@ -1,0 +1,39 @@
+name: tests
+
+on:
+  push:
+    branches: [main,master]
+  pull_request:
+    branches: [main,master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [ '8.4', '8.3' ]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: json
+          tools: composer:v2
+          coverage: none
+
+      - name: Install Composer Dependencies
+        run: composer install --no-progress --optimize-autoloader --prefer-dist
+
+      - name: Run PHPStan
+        uses: actions/cache@v4
+        with:
+          path: /tmp/phpstan
+          key: ${{ runner.os }}-phpstan-${{ hashFiles('composer.lock') }}
+          restore-keys: ${{ runner.os }}-phpstan-
+      - run: mkdir -p /tmp/phpstan
+
+      - name: Run Tests
+        run: composer run test

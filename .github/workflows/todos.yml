@@ -1,0 +1,31 @@
+name: todos
+
+on:
+  push:
+    branches: [main,master]
+  pull_request:
+    branches: [main,master]
+
+jobs:
+  todo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+          coverage: none
+          extensions: json
+          tools: composer:v2
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Install Composer Dependencies
+        run: composer install --no-progress --optimize-autoloader --prefer-dist
+
+      - name: Run todo CLI
+        run: ./bin/todo --exclude=tests --fail-on-bugs --fail-on-fixes --quiet
